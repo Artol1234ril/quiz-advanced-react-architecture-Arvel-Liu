@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ══════════════════════════════
+   SHARED
+══════════════════════════════ */
+.wishlist-page,
+.summary-page {
+  min-height: 100vh;
+  background: #f5f2ee;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.wishlist-header,
+.summary-header {
+  padding: 48px 48px 28px;
+  border-bottom: 1px solid #393734;
+}
+
+.wishlist-tag,
+.summary-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c0392b;
+  margin-bottom: 8px;
+}
+
+.wishlist-title,
+.summary-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #0a0f2e;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.wishlist-subtitle,
+.summary-subtitle {
+  font-size: 0.82rem;
+  color: #888;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════
+   WISHLIST PAGE
+══════════════════════════════ */
+.wishlist-content {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  padding: 32px 48px 60px;
+  align-items: start;
+}
+
+/* ── EMPTY STATE ── */
+.wishlist-empty {
+  text-align: center;
+  padding: 100px 48px;
+}
+
+.wishlist-empty-icon { font-size: 3rem; margin-bottom: 16px; }
+
+.wishlist-empty p {
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  color: #888;
+}
+
+/* ── ITEMS LIST ── */
+.wishlist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wishlist-item {
+  background: #f5f2ee;
+  border: 1px solid #393734;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  animation: fadeUp 0.4s ease both;
+}
+
+.wishlist-item:hover {
+  border-color: #0a0f2e;
+  box-shadow: 0 4px 16px rgba(10,15,46,0.08);
+}
+
+.wishlist-item-img {
+  width: 90px;
+  height: 90px;
+  background: #eae7e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #393734;
+}
+
+.wishlist-item-img img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+}
+
+.wishlist-item-info { flex: 1; }
+
+.wishlist-item-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a0f2e;
+  margin-bottom: 4px;
+}
+
+.wishlist-item-price {
+  font-size: 0.78rem;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.wishlist-item-subtotal {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #c0392b;
+  margin-bottom: 12px;
+}
+
+/* ── QTY CONTROLS ── */
+.qty-controls {
+  display: flex;
+  align-items: center;
+}
+
+.qty-btn {
+  width: 30px;
+  height: 30px;
+  background: #0a0f2e;
+  color: #f5f2ee;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.qty-btn:hover { background: #c0392b; }
+
+.qty-num {
+  width: 36px;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a0f2e;
+  border-top: 1px solid #393734;
+  border-bottom: 1px solid #393734;
+  height: 30px;
+  line-height: 28px;
+  background: #eae7e2;
+}
+
+/* ── ORDER SUMMARY SIDEBAR ── */
+.wishlist-summary-box {
+  background: #f5f2ee;
+  border: 1px solid #393734;
+  border-top: 3px solid #c0392b;
+  padding: 28px 24px;
+  position: sticky;
+  top: 84px;
+}
+
+.summary-box-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a0f2e;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #393734
+}
+
+.summary-box-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.summary-box-row span:last-child {
+  font-weight: 500;
+  color: #0a0f2e;
+}
+
+.summary-box-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  margin-top: 4px;
+  border-top: 1px solid #393734;
+  margin-bottom: 20px;
+}
+
+.summary-box-total span:first-child {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0a0f2e;
+  font-weight: 500;
+}
+
+.summary-box-total span:last-child {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #c0392b;
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: #0a0f2e;
+  color: #fff;
+  border: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s;
+  margin-bottom: 8px;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #c0392b;
+  transform: translateX(-100%);
+  transition: transform 0.28s ease;
+}
+
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-primary:hover::before { transform: translateX(0); }
+.btn-primary span { position: relative; z-index: 1; }
+
+.btn-secondary {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  color: #888;
+  border: 1px solid #dedad4;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+/* ══════════════════════════════
+   SUMMARY PAGE — CENTERED
+══════════════════════════════ */
+.summary-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+/* ── GREEN CHECK CIRCLE ── */
+.summary-check-circle {
+  width: 72px;
+  height: 72px;
+  background: #1e7a3a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 28px;
+  box-shadow: 0 0 32px rgba(30, 122, 58, 0.2);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── TITLE ── */
+.summary-confirm-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  color: #0a0f2e;
+  line-height: 0.95;
+  margin-bottom: 20px;
+  animation: fadeUp 0.5s 0.15s ease both;
+}
+
+/* ── SUBTITLE ── */
+.summary-confirm-sub {
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  animation: fadeUp 0.5s 0.2s ease both;
+}
+
+.summary-confirm-sub strong {
+  color: #0a0f2e;
+  font-weight: 500;
+}
+
+/* ── STATS ROW ── */
+.summary-stats {
+  display: flex;
+  align-items: stretch;
+
+  margin-bottom: 36px;
+  animation: fadeUp 0.5s 0.25s ease both;
+  min-width: 480px;
+}
+
+.summary-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 28px;
+  background: #f5f2ee;
+
+    border: 1px solid #393734;
+}
+
+.summary-stat-divider {
+  width: 1px;
+  background: #dedad4;  
+}
+
+.stat-label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.stat-value {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0a0f2e;
+  line-height: 1;
+}
+
+.stat-value.red   { color: #c0392b; }
+.stat-value.green { color: #1e7a3a; font-size: 1.1rem; }
+
+/* ── CONTINUE BUTTON ── */
+.summary-continue-btn {
+  padding: 15px 40px;
+  background: #0a0f2e;
+  color: #fff;
+  border: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s;
+  animation: fadeUp 0.5s 0.3s ease both;
+}
+
+.summary-continue-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #c0392b;
+  transform: translateX(-100%);
+  transition: transform 0.28s ease;
+}
+
+.summary-continue-btn:hover { transform: translateY(-2px); }
+.summary-continue-btn:hover::before { transform: translateX(0); }
+.summary-continue-btn span { position: relative; z-index: 1; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

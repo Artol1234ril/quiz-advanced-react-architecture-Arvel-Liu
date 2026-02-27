@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── PAGE ── */
+.products-page {
+  min-height: 100vh;
+  background: #f5f2ee;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── HEADER ── */
+.products-header {
+  padding: 48px 48px 32px;
+  text-align: center;
+}
+
+.products-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c0392b;
+  margin-bottom: 10px;
+}
+
+.products-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0a0f2e;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.products-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 300;
+}
+
+/* ── GRID WRAPPER - centers the grid ── */
+.products-grid-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 24px 60px;
+}
+
+/* ── GRID - exactly 3 columns ── */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  gap: 20px;
+}
+
+/* ── CARD ── */
+.product-card {
+  background: #f5f2ee;        /* ✅ same as body */
+  border: 1px solid #dedad4;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.25s, border-color 0.25s;
+  animation: fadeUp 0.5s ease both;
+}
+
+.product-card:nth-child(1) { animation-delay: 0.05s; }
+.product-card:nth-child(2) { animation-delay: 0.10s; }
+.product-card:nth-child(3) { animation-delay: 0.15s; }
+.product-card:nth-child(4) { animation-delay: 0.20s; }
+.product-card:nth-child(5) { animation-delay: 0.25s; }
+
+.product-card:hover {
+  box-shadow: 0 8px 32px rgba(10,15,46,0.12);
+  border-color: #0a0f2e;
+}
+
+/* ── BADGE ROW - sits above image, not over it ── */
+.product-badge-row {
+  padding: 12px 16px 8px;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+}
+
+.product-badge {
+  display: inline-block;
+  background: #0a0f2e;
+  color: #fff;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+}
+
+.product-badge.red { background: #c0392b; }
+
+/* ── IMAGE AREA ── */
+.product-img-wrap {
+  background: #eae7e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  height: 220px;          /* ✅ fixed height, no overflow */
+}
+
+.product-img-wrap img {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;    /* ✅ no zoom hover so image stays in box */
+}
+
+/* ── CARD BODY ── */
+.product-body {
+  padding: 20px 20px 0;
+  flex: 1;
+}
+
+.product-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0a0f2e;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.product-desc {
+  font-size: 0.78rem;
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.product-price {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #c0392b;
+}
+
+.product-currency {
+  font-size: 0.7rem;
+  color: #aaa;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+/* ── ADD TO CART BUTTON ── */
+.product-btn {
+  width: 100%;
+  padding: 14px;
+  background: #0a0f2e;
+  color: #fff;
+  border: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+
+.product-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #c0392b;
+  transform: translateX(-100%);
+  transition: transform 0.28s ease;
+}
+
+.product-btn:hover::before { transform: translateX(0); }
+
+.product-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.product-btn.added {
+  background: #1a5c1a;
+}
+
+.product-btn.added::before { display: none; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

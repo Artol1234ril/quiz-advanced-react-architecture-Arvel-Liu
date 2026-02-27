@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.login-field input {
+  outline: none;        /* ✅ already have this on focus, add to base too */
+  -webkit-appearance: none;  /* ✅ removes browser default styling on Safari/Chrome */
+  appearance: none;
+}
+
+/* also make sure focus is clean */
+.login-field input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(10, 15, 46, 0.08);
+}
+
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0f2e 0%, #111a45 60%, #0a0f2e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle grid pattern background */
+.login-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(192,57,43,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192,57,43,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* red glow orb */
+.login-page::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(192,57,43,0.12) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  background: #f5f2ee;
+  width: 100%;
+  height: 560px;
+  min-width: 620px;
+  padding: 48px 44px 40px;
+  border-top: 3px solid #c0392b;
+  box-shadow:
+    8px 8px 0px #0a0f2e,
+    0 24px 60px rgba(0,0,0,0.5);
+  animation: slideUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+/* ── HEADER TEXT ── */
+.login-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c0392b;
+  margin-bottom: 10px;
+  animation: slideUp 0.5s 0.05s ease both;
+}
+
+.login-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #0a0f2e;
+  margin-bottom: 10px;
+  animation: slideUp 0.5s 0.1s ease both;
+}
+
+.login-subtitle {
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 28px;
+  line-height: 1.5;
+  animation: slideUp 0.5s 0.15s ease both;
+}
+
+/* ── ERROR BOX ── */
+.login-error {
+  background: #fff0f0;
+  border: 1px solid #c0392b;
+  color: #c0392b;
+  font-size: 0.8rem;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  animation: slideUp 0.3s ease both;
+  letter-spacing: 0.02em;
+}
+
+/* ── FIELD GROUP ── */
+.login-field {
+  margin-bottom: 18px;
+  animation: slideUp 0.5s 0.2s ease both;
+}
+
+.login-field label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0a0f2e;
+  margin-bottom: 7px;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 13px 14px;
+  background: #fff;
+  border: 1px solid #d8d4ce;
+  border-radius: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: #0a0f2e;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-field input:focus {
+  border-color: #0a0f2e;
+  box-shadow: 0 0 0 2px rgba(10,15,46,0.08);
+}
+
+.login-field input::placeholder { color: #bbb; }
+
+/* ── SUBMIT BUTTON ── */
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  background: #0a0f2e;
+  color: #fff;
+  border: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, transform 0.15s;
+  animation: slideUp 0.5s 0.25s ease both;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #c0392b;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.login-btn:hover { transform: translateY(-2px); }
+.login-btn:hover::after { transform: translateX(0); }
+
+.login-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HINT TEXT ── */
+.login-hint {
+  margin-top: 16px;
+  font-size: 0.72rem;
+  color: #aaa;
+  text-align: center;
+  letter-spacing: 0.03em;
+  animation: slideUp 0.5s 0.3s ease both;
+}
