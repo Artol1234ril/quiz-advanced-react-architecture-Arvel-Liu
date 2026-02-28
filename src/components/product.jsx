@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom'
 import Navbar from './navbar'
 import '../Style/product.css'
 
-
 import image1 from '../assets/image1.png'
 import image2 from '../assets/image2.png'
 import image3 from '../assets/image3.png'
 import image4 from '../assets/image4.png'
 import image5 from '../assets/image5.png'
+
 const products = [
   {
     id: 1,  
@@ -19,7 +19,7 @@ const products = [
     badge: "Bestseller",
     badgeRed: false,
     description: "Headphones with active noise cancellation and powerful sound.",
-    image: "src/assets/image1.png"
+    image: image1   // ✅ use the imported variable, not a string
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const products = [
     badge: "New",
     badgeRed: false,
     description: "Wireless Gaming Mouse with Many Colorful Lights.",
-    image: "src/assets/image2.png"
+    image: image2   // ✅
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const products = [
     badge: "Popular",
     badgeRed: false,
     description: "High-Quality Digital Music Player with Long Battery Life.",
-    image: "src/assets/image3.png"
+    image: image3   // ✅
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const products = [
     badge: "Premium",
     badgeRed: true,
     description: "High-Performance Gaming Monitor with Stunning OLED Display.",
-    image: "src/assets/image4.png"
+    image: image4   // ✅
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ const products = [
     badge: "Top Pick",
     badgeRed: false,
     description: "Ergonomic Wireless Keyboard with Backlit Keys.",
-    image: "src/assets/image5.png"
+    image: image5   // ✅
   }
 ]
 
@@ -105,7 +105,7 @@ export default function Product() {
             return (
               <div key={product.id} className="product-card">
 
-                {/* ✅ BADGE is above the image, not overlapping it */}
+                {/* BADGE is above the image, not overlapping it */}
                 <div className="product-badge-row">
                   {product.badge && (
                     <span className={`product-badge ${product.badgeRed ? 'red' : ''}`}>
