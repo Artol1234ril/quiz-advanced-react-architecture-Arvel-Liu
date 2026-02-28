@@ -5,14 +5,14 @@ import Navbar from './navbar'
 import '../Style/product.css'
 
 
-import  'src/assets/image1.png'
-import  'src/assets/image2.png'
-import  'src/assets/image3.png'
-import  'src/assets/image4.png'
-import  'src/assets/image5.png' 
+import image1 from '../assets/image1.png'
+import image2 from '../assets/image2.png'
+import image3 from '../assets/image3.png'
+import image4 from '../assets/image4.png'
+import image5 from '../assets/image5.png'
 const products = [
   {
-    id: 1,
+    id: 1,  
     name: "JBL Live 770NC",
     price: 10.99,
     qty: 1,
